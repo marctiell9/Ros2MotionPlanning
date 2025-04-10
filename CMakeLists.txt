@@ -52,7 +52,7 @@ target_include_directories(kdl_package_testing PRIVATE
   $<INSTALL_INTERFACE:include>
 )
 
-add_executable(kin_inv_test src/kin_inv_test.cpp)
+add_executable(TrajTracking_test src/TrajTracking_test.cpp)
 target_link_libraries(kin_inv_test kdl_ros_control_lib)
 ament_target_dependencies(kin_inv_test ${dependencies}) 
 
@@ -71,7 +71,7 @@ endif()
 install(TARGETS
   kdl_ros_control_lib
   kdl_package_testing
-  kin_inv_test
+  TrajTracking_test
   DESTINATION lib/${PROJECT_NAME}
 )
 
