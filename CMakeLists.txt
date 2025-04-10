@@ -38,10 +38,6 @@ add_library(kdl_ros_control_lib
 )
 ament_target_dependencies(kdl_ros_control_lib ${dependencies})
 
-add_executable(kdl_trajectory_test src/kdl_trajectory_test.cpp)
-target_link_libraries(kdl_trajectory_test kdl_ros_control_lib)
-ament_target_dependencies(kdl_trajectory_test ${dependencies}) 
-
 add_executable(kdl_package_testing src/kdl_package_testing.cpp)
 target_link_libraries(kdl_package_testing kdl_ros_control_lib)
 ament_target_dependencies(kdl_package_testing ${dependencies}) 
@@ -75,7 +71,6 @@ endif()
 install(TARGETS
   kdl_ros_control_lib
   kdl_package_testing
-  kdl_trajectory_test
   kin_inv_test
   DESTINATION lib/${PROJECT_NAME}
 )
