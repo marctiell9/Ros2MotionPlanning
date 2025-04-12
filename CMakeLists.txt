@@ -38,10 +38,6 @@ add_library(kdl_ros_control_lib
 )
 ament_target_dependencies(kdl_ros_control_lib ${dependencies})
 
-add_executable(kdl_trajectory_test src/kdl_trajectory_test.cpp)
-target_link_libraries(kdl_trajectory_test kdl_ros_control_lib)
-ament_target_dependencies(kdl_trajectory_test ${dependencies}) 
-
 add_executable(kdl_package_testing src/kdl_package_testing.cpp)
 target_link_libraries(kdl_package_testing kdl_ros_control_lib)
 ament_target_dependencies(kdl_package_testing ${dependencies}) 
@@ -51,9 +47,10 @@ target_include_directories(kdl_ros_control_lib PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 
-add_executable(kin_inv_test src/kin_inv_test.cpp)
-target_link_libraries(kin_inv_test kdl_ros_control_lib)
-ament_target_dependencies(kin_inv_test ${dependencies}) 
+add_executable(TrajTracking_test src/kin_inv_test.cpp)
+target_link_libraries(TrajTracking_test kdl_ros_control_lib)
+ament_target_dependencies(TrajTracking_test ${dependencies}) 
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -70,8 +67,7 @@ endif()
 install(TARGETS
   kdl_ros_control_lib
   kdl_package_testing
-  kdl_trajectory_test
-  kin_inv_test
+  TrajTracking_test
   DESTINATION lib/${PROJECT_NAME}
 )
 
