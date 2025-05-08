@@ -91,30 +91,7 @@ Eigen::VectorXd KDLController::idCntr(KDL::Frame &_desPos,
     // null space control
     double cost;
     Eigen::VectorXd grad = gradientJointLimits(robot_->getJntValues(),robot_->getJntLimits(),cost);
-
-    std::cout << "---------------------" << std::endl;
-//    std::cout << "p_d: " << std::endl << p_d << std::endl;
-//    std::cout << "p_e: " << std::endl << p_e << std::endl;
-//    std::cout << "dot_p_d: " << std::endl << dot_p_d << std::endl;
-//    std::cout << "dot_p_e: " << std::endl << dot_p_e << std::endl;
-//    std::cout << "R_sh*R_d: " << std::endl << R_d << std::endl;
-//    std::cout << "R_e: " << std::endl << R_e << std::endl;
-//    std::cout << "omega_d: " << std::endl << omega_d << std::endl;
-//    std::cout << "omega_e: " << std::endl << omega_e << std::endl;
-//    std::cout << "x_tilde: " << std::endl << x_tilde << std::endl;
-//    std::cout << "dot_x_tilde: " << std::endl << dot_x_tilde << std::endl;
-//    std::cout << "jacobian: " << std::endl << J << std::endl;
-//    std::cout << "jpinv: " << std::endl << Jpinv << std::endl;
-//    std::cout << "jsim: " << std::endl << M << std::endl;
-//    std::cout << "c: " << std::endl << robot_->getCoriolis().transpose() << std::endl;
-//    std::cout << "g: " << std::endl << robot_->getGravity().transpose() << std::endl;
-//    std::cout << "q: " << std::endl << robot_->getJntValues().transpose() << std::endl;
-//    std::cout << "Jac Dot : " << std::endl << robot_->getEEJacDotqDot() << std::endl;
-//    std::cout << "Jac Dot qDot: " << std::endl << J_dot*dq << std::endl;
-//    std::cout << "Jnt lmt cost: " << std::endl << cost << std::endl;
-//    std::cout << "Jnt lmt gradient: " << std::endl << grad.transpose() << std::endl;
-//    std::cout << "---------------------" << std::endl;
-
+    
    // inverse dynamics
 
     Eigen::Matrix<double,6,1> y;
