@@ -71,7 +71,7 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     auto node = rclcpp::Node::make_shared("kdl_ros2_control_node");
 
-    auto joint_state_sub = node->create_subscription<sensor_msgs::msg::JointState>("/joint_states",10,jointStateCallback); // questo subscriber serve a leggere velocità e posizione giunti
+    auto joint_state_sub = node->create_subscription<sensor_msgs::msg::JointState>("/joint_states",10,jointStateCallback); 
     auto effort_pub = node->create_publisher<std_msgs::msg::Float64MultiArray>("/effort_controller/commands",10);
     auto error_pub = node->create_publisher<std_msgs::msg::Float64>("error", 10);
 
